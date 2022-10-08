@@ -1,2 +1,0 @@
-# BashStuff
-Bash scripts
