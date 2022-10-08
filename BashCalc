@@ -1,0 +1,51 @@
+# !/bin/bash
+
+
+
+# Wybor operacji
+echo "Co chcesz obliczyc :"
+echo "1. Dodawanie"
+echo "2. Odejmowanie"
+echo "3. Mnozenie"
+echo "4. Dzielenie"
+echo "5. Pierwiastkowanie"
+read ch
+
+# Switch Case do wybranego operatora
+case $ch in
+1)
+        echo 'Podaj liczby'
+        read a
+        read b
+        res=`echo $a + $b | bc`
+        echo "Result : $res"
+;;
+2)
+        echo 'Podaj liczby'
+        read a
+        read b
+        res=`echo $a - $b | bc`
+        echo "Result : $res"
+;;
+3)
+        echo 'Podaj liczby'
+        read a
+        read b
+        res=`echo $a \* $b | bc`
+        echo "Result : $res"
+;;
+4)
+        echo 'Podaj liczby'
+        read a
+        read b
+        res=`echo "scale=2; $a / $b" | bc`
+        echo "Result : $res"
+;;
+5)
+        echo 'Podaj liczbe'
+        read a
+        res=`echo "scale=4; sqrt($a)" | bc`
+        echo "Pierwiatek z $a to $res"
+;;
+esac
+
