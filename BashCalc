@@ -9,6 +9,7 @@ echo "2. Odejmowanie"
 echo "3. Mnozenie"
 echo "4. Dzielenie"
 echo "5. Pierwiastkowanie"
+echo "6. Potega"
 read ch
 
 # Switch Case do wybranego operatora
@@ -18,28 +19,28 @@ case $ch in
         read a
         read b
         res=`echo $a + $b | bc`
-        echo "Result : $res"
+        echo "Wynik : $res"
 ;;
 2)
         echo 'Podaj liczby'
         read a
         read b
         res=`echo $a - $b | bc`
-        echo "Result : $res"
+        echo "Wynik : $res"
 ;;
 3)
         echo 'Podaj liczby'
         read a
         read b
         res=`echo $a \* $b | bc`
-        echo "Result : $res"
+        echo "Wynik : $res"
 ;;
 4)
         echo 'Podaj liczby'
         read a
         read b
         res=`echo "scale=2; $a / $b" | bc`
-        echo "Result : $res"
+        echo "Wynik : $res"
 ;;
 5)
         echo 'Podaj liczbe'
@@ -47,5 +48,13 @@ case $ch in
         res=`echo "scale=4; sqrt($a)" | bc`
         echo "Pierwiatek z $a to $res"
 ;;
+6)
+        echo 'Podaj liczbe'
+        read a
+        echo 'Podaj potege'
+        read b
+        res='echo "scale=4; $a^$b" | bc'
+        echo "Potega z liczby $a do potegi $b wynosi $res"
+;;   
 esac
 
