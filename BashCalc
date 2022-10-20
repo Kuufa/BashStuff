@@ -13,7 +13,7 @@ echo "6. Potega"
 echo "7. Pitagoras"
 echo "8. Logarytm"
 echo "9. Pole prostokata"
-echo "9. Pole kwadratu"
+echo "10. Pole kwadratu"
 read ch
 
 # Switch Case do wybranego operatora
