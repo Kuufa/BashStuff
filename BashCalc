@@ -10,6 +10,9 @@ echo "3. Mnozenie"
 echo "4. Dzielenie"
 echo "5. Pierwiastkowanie"
 echo "6. Potega"
+echo "7. Pitagoras"
+echo "8. Logarytm"
+echo "9. Pole prostokata"
 read ch
 
 # Switch Case do wybranego operatora
@@ -39,7 +42,7 @@ case $ch in
         echo 'Podaj liczby'
         read a
         read b
-        res=`echo "scale=2; $a / $b" | bc`
+        res=`echo "scale=4; $a / $b" | bc`
         echo "Wynik : $res"
 ;;
 5)
@@ -53,8 +56,48 @@ case $ch in
         read a
         echo 'Podaj potege'
         read b
-        res='echo "scale=4; $a^$b" | bc'
+        res=`echo "scale=4; $a^$b" | bc`
         echo "Potega z liczby $a do potegi $b wynosi $res"
-;;   
+;;
+7)
+        echo '
+  +
+  |\
+  | \ C
+A |  \
+  |   \
+  +----\
+    B    '
+        echo "Podaj A "
+        read a
+        echo "Podaj B "
+        read b
+        aSquared=$(($b**2))
+        bSquared=$((a**2))
+        cSquared=$(($b+$a))
+        res=$(echo "scale=4;sqrt($cSquared)"|bc)
+
+
+        echo "A = $a"
+        echo "B = $b"
+        echo "C = $res"
+
+;;
+8)
+        echo 'Podaj liczbe'
+        read a
+        echo 'Podaj logarytm'
+        read b
+        res=`echo "scale=4; l($a)/l($b)" | bc -l`
+        echo "Wynik : $res"
+;;
+9)
+        echo 'Podaj bok a'
+        read a
+        echo 'Podaj bok b'
+        read b
+        res=`echo "$a*$b" | bc`
+        echo "Wynik : $res"
+;;
 esac
 
