@@ -13,6 +13,7 @@ echo "6. Potega"
 echo "7. Pitagoras"
 echo "8. Logarytm"
 echo "9. Pole prostokata"
+echo "9. Pole kwadratu"
 read ch
 
 # Switch Case do wybranego operatora
@@ -97,6 +98,12 @@ A |  \
         echo 'Podaj bok b'
         read b
         res=`echo "$a*$b" | bc`
+        echo "Wynik : $res"
+;;
+10)
+        echo 'Podaj bok a'
+        read a
+        res=`echo "$a*$a" | bc`
         echo "Wynik : $res"
 ;;
 esac
